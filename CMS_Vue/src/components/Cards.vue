@@ -3,7 +3,7 @@
         <div class="card" v-for="person in persons" :key="person.id">
             <img :src="person.image" :alt="person.firstname + ' ' + person.lastname" class="card-image" />
             <h3 class="card-name">{{ person.firstname }} {{ person.lastname }}</h3>
-            <p class="card-description">{{ person.email }}</p>
+            <p class="card-description">{{ person.email }} <br></br> {{ person.phone }} <br></br> {{ person.birthday }} <br></br> {{ person.address.street }} <br></br> {{ person.address.city }} <br></br> {{ person.address.country }}</p>
         </div>
     </div>
 </template>
@@ -46,8 +46,8 @@ export default {
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
     text-align: center;
     transition: box-shadow 0.2s;
-    max-width: 294px;
-    max-height: 486px;
+    width: 294px;
+    height: 486px;
 }
 
 .card:hover {
