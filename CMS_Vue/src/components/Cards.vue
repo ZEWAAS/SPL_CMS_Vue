@@ -22,7 +22,7 @@ export default {
             const data = await response.json();
             this.persons = data.data.map(person => ({
                 ...person,
-                image: 'https://picsum.photos/200/' + Math.floor(Math.random() * 900),// Adding random query to avoid caching  
+                image: `https://picsum.photos/200/300?random=${Math.floor(Math.random() * 10000)}`, // Adding random query to avoid caching  
             }));
         } catch (error) {
             this.persons = [];
