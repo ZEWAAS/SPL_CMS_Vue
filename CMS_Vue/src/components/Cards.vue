@@ -22,7 +22,7 @@ export default {
             const data = await response.json();
             this.persons = data.data.map(person => ({
                 ...person,
-                image: person.image 
+                image: 'https://picsum.photos/200/' + Math.floor(Math.random() * 900),// Adding random query to avoid caching  
             }));
         } catch (error) {
             this.persons = [];
@@ -72,7 +72,11 @@ export default {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
 }
-
+@media (max-width: 1280px) {
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 @media (max-width: 900px) {
     .cards-grid {
         grid-template-columns: repeat(2, 1fr);
