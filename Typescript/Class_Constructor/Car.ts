@@ -4,7 +4,7 @@ export class Car {
     // Gedächnisvariablen
     private brand: string;
     private model: string;
-    private year: number;
+    private year: number = 2020;
 
     constructor(brand: string, model: string, year: number) {
         this.brand = brand;
