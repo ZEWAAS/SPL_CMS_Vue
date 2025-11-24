@@ -1,5 +1,6 @@
 import { Blind } from "./blind.ts";
 import { Heater } from "./heater.ts";
+import { Light } from "./light.ts";
 import { Controllable } from "./controllable.ts";
 
 class Controller {
@@ -17,10 +18,12 @@ class Controller {
 
 const b1: Blind = new Blind();
 const h1: Heater = new Heater();
+const l1: Light = new Light();
 
 const controller: Controller = new Controller([]);
 controller.addDevice(b1);
 controller.addDevice(h1);
+controller.addDevice(l1);
 controller.addDevice(new Heater());
 
 controller.startDevice(0);
