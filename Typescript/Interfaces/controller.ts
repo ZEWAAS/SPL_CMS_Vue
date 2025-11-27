@@ -4,17 +4,16 @@ import { Light } from "./light.ts";
 import { Controllable } from "./controllable.ts";
 
 class Controller {
-    constructor(private devices: Controllable[]) {}
+  constructor(private devices: Controllable[]) {}
 
-    addDevice(controllable: Controllable): void {
-        this.devices.push(controllable);
-    }
-    
-    startDevice(index: number): void {
-        this.devices[index].start();
-    }
+  addDevice(controllable: Controllable): void {
+    this.devices.push(controllable);
+  }
+
+  startDevice(index: number): void {
+    this.devices[index].start();
+  }
 }
-
 
 const b1: Blind = new Blind();
 const h1: Heater = new Heater();

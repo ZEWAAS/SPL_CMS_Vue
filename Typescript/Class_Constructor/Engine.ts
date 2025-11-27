@@ -1,5 +1,5 @@
 export class Engine {
-    constructor(private horsepower: number) {
-        this.horsepower = horsepower;
-    }
+  constructor(private horsepower: number) {
+    this.horsepower = horsepower;
+  }
 }
