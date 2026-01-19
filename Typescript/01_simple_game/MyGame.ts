@@ -3,7 +3,9 @@ import { Circle } from "./actors/Circle.js";
 import { Game, GameFramework } from "./GameFramework.js";
 import { Rectangle } from "./actors/Rectangle.js";
 import { Actor } from "./actors/Actor.js";
-import { Tree } from "./actors/Tree.js";
+import { LeftMovement } from "./movements/LeftMovement.js";
+import { SinusMovement } from "./movements/SinusMovement.js";
+import { RightMovement } from "./movements/RightMovement.js";
 
 class MyGame extends Game {
   // Always code against interfaces
@@ -17,16 +19,14 @@ class MyGame extends Game {
   }
   init(): void {
     console.log("Game started!");
-    const r1 = new Rectangle(0, 0, 10, 20);
-    const r2 = new Rectangle(100, 0, 50, 50);
-    const r3 = new Rectangle(100, 100, 50, 50);
-    const c1 = new Circle(200, 200, 30, 30);
-    const t1 = new Tree(300, 300, 40, 60);
+    const r1 = new Rectangle(80, 90, new LeftMovement(400, 100));
+    const r2 = new Rectangle(100, 100, new RightMovement(100, 400));
+    const r3 = new Rectangle(100, 100, new SinusMovement(100, 100));
+    const c1 = new Circle(50, 50, new RightMovement(50, 300));
     this.addActor(r1);
     this.addActor(r2);
     this.addActor(r3);
     this.addActor(c1);
-    this.addActor(t1);
   }
 
   update(deltaTime: number): void {
